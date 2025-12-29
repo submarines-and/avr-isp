@@ -14,4 +14,7 @@ Use esp8266 to program an attiny85. From this [tutorial](https://www.youtube.com
 Also 10kohm pull-up resistor from attiny pin1 to power rail
 
 
-![Wires](./image.jpeg)
+
+![Diagram](/img/diagram.jpeg)
+
+![Circuit](./img/circuit.jpeg)
