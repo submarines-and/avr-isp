@@ -1,6 +1,31 @@
-Use esp8266 to program an attiny85. From this [tutorial](https://www.youtube.com/watch?v=tBq3sO1Z-7o&list=PLNyfXcjhOAwOF-7S-ZoW2wuQ6Y-4hfjMR&index=2), but for esp instead of an atmega/arduino. Last video uses a attiny.
+# AVR ISP
+ISP code for AVR devices. Supports the devices that I use. Based on this [tutorial](https://www.youtube.com/watch?v=tBq3sO1Z-7o&list=PLNyfXcjhOAwOF-7S-ZoW2wuQ6Y-4hfjMR&index=2), but for esp instead of an atmega/arduino. Last video uses a attiny.
 
-# Wiring
+# Supported devices (that I have tested for)
+Host: Adafruit Feather v2, ESP8266
+Target: ATTiny85
+
+For all boards, connect a 10kohm pull-up resistor from attiny pin1 to power rail (see schematics).
+
+## Feather v2
+
+| Feather V2    | Attiny86 |
+| -------- | ------- |
+| SCK   | pin 7 (SCK)     |
+| MISO  | pin 6 (MISO)      |
+| MOSI     | pin 5 (MOSI)     |
+| D14    | pin 1 (RESET)     |
+| GND    | pin 4     |
+| 3.3v     | pin 8    |
+
+
+![Diagram featherv2](/img/diagram-featherv2.png)
+
+![Circuit featherv2](./img/circuit-featherv2.png)
+
+
+
+## Esp8266
 
 | Esp8266    | Attiny86 |
 | -------- | ------- |
@@ -11,10 +36,13 @@ Use esp8266 to program an attiny85. From this [tutorial](https://www.youtube.com
 | GND    | pin 4     |
 | 3.3v     | pin 8    |
 
-Also 10kohm pull-up resistor from attiny pin1 to power rail
+
+
+![Diagram esp8266](/img/diagram-esp8266.png)
+
+![Circuit esp8266](./img/circuit-esp8266.png)
 
 
 
-![Diagram](/img/diagram.jpeg)
 
-![Circuit](./img/circuit.jpeg)
+

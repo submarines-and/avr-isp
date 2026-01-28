@@ -28,7 +28,18 @@
 
 // The standard pin configuration.
 #ifndef ARDUINO_HOODLOADER2
+
+// feather v2 pins
+#ifdef ARDUINO_ADAFRUIT_FEATHER_ESP32_V2
+#define RESET 14
+#endif
+
+// esp8266 pins
+#ifdef ESP8266
 #define RESET D4
+#endif
+
+// LED pins disabled
 // #define LED_HB    9
 // #define LED_ERR   8
 // #define LED_PMODE 7
@@ -68,6 +79,11 @@
 
 #ifndef PIN_SCK
 #define PIN_SCK SCK
+#endif
+
+// use hardware pins for esp8266
+#ifdef ESP8266
+#define USE_HARDWARE_SPI
 #endif
 
 // Force bitbanged SPI if not using the hardware SPI pins:
@@ -112,7 +128,6 @@
 #define CRC_EOP 0x20 // ok it is a space...
 
 void pulse(int pin, int times);
-#define USE_HARDWARE_SPI
 
 #ifdef USE_HARDWARE_SPI
 #include "SPI.h"
